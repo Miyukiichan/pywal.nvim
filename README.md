@@ -33,13 +33,13 @@ It's a reimplementation of wal.vim but wrote in lua, it is the best choice if yo
 You can install this plugin with packer:
 
 ```lua
-use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
+use { 'Miyukiichan/pywal.nvim', as = 'pywal' }
 ```
 
 Or with vim-plug:
 
 ```vim
-Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
+Plug 'Miyukiichan/pywal.nvim', { 'as': 'pywal' }
 ```
 
 ## Active theme
@@ -59,20 +59,6 @@ colorscheme pywal
 ```
 
 > It will set automatically the `vim.opt.termguicolors` to true
-
-## Activating lualine theme
-
-Place this in your lualine config:
-
-```lua
-local lualine = require('lualine')
-
-lualine.setup {
-    options = {
-        theme = 'pywal-nvim',
-    },
-}
-```
 
 ## Using the core to get the colours
 
@@ -137,3 +123,4 @@ pywal.setup({
     pywalPath = "MY_PATH"
 })
 ```
+
