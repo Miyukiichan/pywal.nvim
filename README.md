@@ -1,6 +1,6 @@
 # pywal.nvim
 
-This is a fork of the [original pywal.nvim project](https://github.com/AlphaTechnolog/pywal.nvim) with some minor modifications since that project is now archived. Please see the original README below.
+This is a fork of the [original pywal.nvim project](https://github.com/AlphaTechnolog/pywal.nvim) with some minor modifications due to the original project being archived. Please see the (mostly) original README below.
 
 Pywal.nvim is a reimplementation of [pywal.vim](https://github.com/dylanaraps/wal.vim)
 wrote totally in lua, with support for a few nvim lua plugins
@@ -26,7 +26,6 @@ It's a reimplementation of wal.vim but wrote in lua, it is the best choice if yo
 - Git signs
 - Git gutter
 - Lualine
-- Feline
 - Ident-BlankLine
 
 ## Installation
@@ -69,35 +68,11 @@ Place this in your lualine config:
 local lualine = require('lualine')
 
 lualine.setup {
-  options = {
-    theme = 'pywal-nvim',
-  },
+    options = {
+        theme = 'pywal-nvim',
+    },
 }
 ```
-
-## Activating the feline theme
-
-You can put this to your config to activate the feline config:
-
-```lua
-local present, feline = pcall(require, 'feline')
-
-if not present then
-  return
-end
-
-local present, pywal_feline = pcall(require, 'pywal.feline')
-
-if not present then
-  return
-end
-
-feline.setup({
-  components = pywal_feline,
-})
-```
-
-Then you will see the feline bar working successfully
 
 ## Using the core to get the colours
 
@@ -149,4 +124,16 @@ If you like this and my work you can give me a star :)
 
 ## New Features in this Fork
 
-- The ability to specify a path to the colour definition rather than the default pywal cache path. This is useful for running on servers that don't have pywal installed but you still want to preserve the pywal theme from your desktop machine for example.
+### Custom pywal path
+
+The ability to specify a path to the colour definition rather than the default pywal cache path. This is useful for running on servers that don't have pywal installed but you still want to preserve the pywal theme from your desktop machine for example.
+
+To do this, modify your call to setup to add the following options:
+
+```lua
+local pywal = require('pywal')
+
+pywal.setup({
+    pywalPath = "MY_PATH"
+})
+```
