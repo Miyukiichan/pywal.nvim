@@ -1,5 +1,7 @@
 # pywal.nvim
 
+This is a fork of the [original pywal.nvim project](https://github.com/AlphaTechnolog/pywal.nvim) with some minor modifications since that project is now archived. Please see the original README below.
+
 Pywal.nvim is a reimplementation of [pywal.vim](https://github.com/dylanaraps/wal.vim)
 wrote totally in lua, with support for a few nvim lua plugins
 
@@ -97,9 +99,9 @@ feline.setup({
 
 Then you will see the feline bar working successfully
 
-## Using the core to get the colors
+## Using the core to get the colours
 
-If you want to get the colors into a lua dictionary
+If you want to get the colours into a lua dictionary
 
 ```lua
 local pywal_core = require('pywal.core')
@@ -109,7 +111,7 @@ local colors = pywal_core.get_colors()
 ## How it works
 
 Pywal automatically generate a file called `colors-wal.vim` in `~/.cache/wal/colors-wal.vim`,
-it file contains all the colors that are necesary to works for vim, it files looks
+it file contains all the colours that are necessary to works for vim, it files looks
 like this:
 
 ```vim
@@ -139,8 +141,12 @@ let color15 = "#e3cfe2"
 ```
 
 The theme only reads it files variables and then create a colors dictionary to create
-a theme based in it's colors
+a theme based in it's colours
 
 ## Enjoy
 
 If you like this and my work you can give me a star :)
+
+## New Features in this Fork
+
+- The ability to specify a path to the colour definition rather than the default pywal cache path. This is useful for running on servers that don't have pywal installed but you still want to preserve the pywal theme from your desktop machine for example.
