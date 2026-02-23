@@ -60,6 +60,20 @@ colorscheme pywal
 
 > It will set automatically the `vim.opt.termguicolors` to true
 
+## Activating lualine theme
+
+Place this in your lualine config AFTER the call to pywal-nvim setup:
+
+```lua
+local lualine = require('lualine')
+
+lualine.setup {
+  options = {
+    theme = 'pywal-nvim',
+  },
+}
+```
+
 ## Using the core to get the colours
 
 If you want to get the colours into a lua dictionary
